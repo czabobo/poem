@@ -1,0 +1,28 @@
+server:
+  port: 8989
+  servlet:
+    context-path: /poem
+    jsp:
+      init-parameters:
+        development: true
+spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/poem
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+  data:
+    elasticsearch:
+      cluster-nodes: 192.168.187.104:9300
+  redis:
+    host: 192.168.187.104
+    database: 0
+    port: 7000
+mybatis:
+  type-aliases-package: com.baizhi.entity
+  mapper-locations: classpath:com/bazihi/mapper/*.xml
